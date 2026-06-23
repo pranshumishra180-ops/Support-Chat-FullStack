@@ -13,10 +13,16 @@ const allowedOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:5173")
   .split(",")
   .map((origin) => origin.trim());
 
-app.use(cors({
-    origin: allowedOrigins,
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://support-chat-full-stack.vercel.app",
+    ],
     credentials: true,
-}));
+  })
+);
 
 app.use((req, res, next) => {
     res.setHeader("X-Content-Type-Options", "nosniff");
