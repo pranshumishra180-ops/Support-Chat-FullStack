@@ -15,8 +15,10 @@ const {
 connectToDB();
 
 const server = http.createServer(app);
-
-const allowedOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:5173")
+const allowedOrigins = (
+  process.env.CLIENT_ORIGIN ||
+  "https://support-chat-full-stack.vercel.app,http://localhost:5173"
+)
   .split(",")
   .map((origin) => origin.trim());
 
