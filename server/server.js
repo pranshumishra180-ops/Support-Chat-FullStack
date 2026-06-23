@@ -22,6 +22,7 @@ const allowedOrigins = (
   .split(",")
   .map((origin) => origin.trim());
 
+
 const io = new Server(server, {
   cors: {
     origin: allowedOrigins,

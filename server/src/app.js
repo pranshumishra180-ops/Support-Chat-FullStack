@@ -14,12 +14,10 @@ const allowedOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:5173")
   .map((origin) => origin.trim());
 
 
-app.use(
+
+  app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://support-chat-full-stack.vercel.app",
-    ],
+    origin: allowedOrigins,
     credentials: true,
   })
 );
